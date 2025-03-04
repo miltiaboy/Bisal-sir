@@ -13,19 +13,19 @@ def is_enabled(value, default):
         return default
 
 #main variables
-API_ID = int(environ.get('API_ID', ''))
-API_HASH = environ.get('API_HASH', '')
-BOT_TOKEN = environ.get('BOT_TOKEN', '6165486744:AAFW3C6588558QbLWfRD_-ddGAWAfY')
+API_ID = int(environ.get('API_ID', '5231149'))
+API_HASH = environ.get('API_HASH', 'd53ef34a7880f18526ebd67651c96d6c')
+BOT_TOKEN = environ.get('BOT_TOKEN', '8050270193:AAEw5NTgOjVt2ZVRlzcXsYwMJwU2yq8shu0')
 
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '5397984467').split()]
-USERNAME = environ.get('USERNAME', "https://telegram.me/biisal")
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-10019494867581'))
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '5079242179').split()]
+USERNAME = environ.get('USERNAME', "https://t.me/PowerOfTG")
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002306644446'))
 MOVIE_GROUP_LINK = environ.get('MOVIE_GROUP_LINK', 'https://t.me/+4RB2-U2o9yE4ZmQ9')
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001234567898').split()]
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://username:password@cluster0.jhvfd.mongodb.net/?retryWrites=true&w=majority")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://sree:sree@cluster0.p3oia.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 
-DATABASE_NAME = environ.get('DATABASE_NAME', "TELEGRAM_BOT_INFO")
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
+DATABASE_NAME = environ.get('DATABASE_NAME', "Kudumbi_info_bot")
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Kudumbi_info_bot')
 LOG_API_CHANNEL = int(environ.get('LOG_API_CHANNEL', '-1001949498981'))
 QR_CODE = environ.get('QR_CODE', 'https://graph.org/file/ccb9db43e62a2e524928e.jpg')
 START_IMG = environ.get('START_IMG', 'https://graph.org/file/4dad0cc16f190468454ee.jpg')
@@ -34,7 +34,7 @@ DELETE_CHANNELS = int(environ.get('DELETE_CHANNELS','-1001905670346'))
 URL = environ.get('URL', 'mytestbot-jvdfhbj.com')
 STICKERS_IDS = ('CAACAgQAAxkBAAEK99dlfC7LDqnuwtGRkIoacot_dGC4zQACbg8AAuHqsVDaMQeY6CcRojME').split()
 FILE_AUTO_DEL_TIMER = int(environ.get('FILE_AUTO_DEL_TIMER', '600'))
-IS_VERIFY = is_enabled('IS_VERIFY', True)
+IS_VERIFY = is_enabled('IS_VERIFY', False)
 LOG_VR_CHANNEL = int(environ.get('LOG_VR_CHANNEL', '-1001949498981'))
 TUTORIAL = environ.get("TUTORIAL", "https://t.me/Movie_Url_link_downloader/17")
 VERIFY_IMG = environ.get("VERIFY_IMG", "https://graph.org/file/1669ab9af68eaa62c3ca4.jpg")
@@ -72,7 +72,7 @@ IMDB_TEMPLATE = environ.get('IMDB_TEMPLATE', f'{script.IMDB_TEMPLATE_TXT}')
 LONG_IMDB_DESCRIPTION = is_enabled('LONG_IMDB_DESCRIPTION', False)
 PROTECT_CONTENT = is_enabled('PROTECT_CONTENT', False)
 SPELL_CHECK = is_enabled('SPELL_CHECK', True)
-LINK_MODE = is_enabled('LINK_MODE', True)
+LINK_MODE = is_enabled('LINK_MODE', False)
 SETTINGS = {
             'spell_check': SPELL_CHECK,
             'auto_filter': AUTO_FILTER,
