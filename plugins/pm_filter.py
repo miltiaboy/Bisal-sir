@@ -1283,7 +1283,7 @@ async def auto_filter(client, msg, spoll=False , pm_mode = False):
         files, offset, total_results = await get_search_results(search)
         if not files:
             if settings["spell_check"]:
-                await delSticker(st)
+                
                 ai_sts = await msg.reply_text('<b>Ai is Cheking For Your Spelling. Please Wait.</b>')
                 is_misspelled = await ai_spell_check(search)
                 if is_misspelled:
@@ -1292,7 +1292,7 @@ async def auto_filter(client, msg, spoll=False , pm_mode = False):
                     msg.text = is_misspelled
                     await ai_sts.delete()
                     return await auto_filter(client, msg)
-                await delSticker(st)
+                
                 await ai_sts.delete()
                 return await advantage_spell_chok(msg)
             return
@@ -1349,8 +1349,7 @@ async def auto_filter(client, msg, spoll=False , pm_mode = False):
         ])
                              
     if spoll:
-        m = await msg.message.edit(f"<b><code>{search}</code> ɪs ꜰᴏᴜɴᴅ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ꜰᴏʀ ꜰɪʟᴇs 📫</b>")
-        await delSticker(st)
+        m = await msg.message.edit(f"<b><code>{search}</code> ɪs ꜰᴏᴜɴᴅ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ꜰᴏʀ ꜰɪʟᴇs 📫</b>")        
         await asyncio.sleep(1.2)
         await m.delete()
 
@@ -1410,8 +1409,7 @@ async def auto_filter(client, msg, spoll=False , pm_mode = False):
     if imdb and imdb.get('poster'):
         try:
             if settings['auto_delete']:
-                k = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024] + links + del_msg, parse_mode=enums.ParseMode.HTML, reply_markup=InlineKeyboardMarkup(btn))
-                await delSticker(st)
+                k = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024] + links + del_msg, parse_mode=enums.ParseMode.HTML, reply_markup=InlineKeyboardMarkup(btn))                
                 await asyncio.sleep(DELETE_TIME)
                 await k.delete()
                 try:
@@ -1424,8 +1422,7 @@ async def auto_filter(client, msg, spoll=False , pm_mode = False):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
             if settings["auto_delete"]:
-                k = await message.reply_photo(photo=poster, caption=cap[:1024] + links + del_msg, parse_mode=enums.ParseMode.HTML, reply_markup=InlineKeyboardMarkup(btn))
-                await delSticker(st)
+                k = await message.reply_photo(photo=poster, caption=cap[:1024] + links + del_msg, parse_mode=enums.ParseMode.HTML, reply_markup=InlineKeyboardMarkup(btn))               
                 await asyncio.sleep(DELETE_TIME)
                 await k.delete()
                 try:
@@ -1436,8 +1433,7 @@ async def auto_filter(client, msg, spoll=False , pm_mode = False):
                 await message.reply_photo(photo=poster, caption=cap[:1024] + links + del_msg, parse_mode=enums.ParseMode.HTML, reply_markup=InlineKeyboardMarkup(btn))
         except Exception as e:
             print(e)
-            if settings["auto_delete"]:
-                await delSticker(st)
+            if settings["auto_delete"]:                
                 try:
                     k = await message.reply_text(cap + links + del_msg, parse_mode=enums.ParseMode.HTML, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
                 except Exception as e:
@@ -1452,9 +1448,8 @@ async def auto_filter(client, msg, spoll=False , pm_mode = False):
                 await message.reply_text(cap + links + del_msg, parse_mode=enums.ParseMode.HTML, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
     else:
         k = await message.reply_text(text=cap + links + del_msg, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML, reply_to_message_id=message.id)
-        await delSticker(st)
-        if settings['auto_delete']:
-            await delSticker(st)
+        
+        if settings['auto_delete']:            
             await asyncio.sleep(DELETE_TIME)
             await k.delete()
             try:
